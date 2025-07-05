@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccs6fyx0oja5x"]
+
+[ext_resource type="PackedScene" uid="uid://bsa1h3qnv1qaw" path="res://assets/skeletons/characters/fbx/Skeleton_Minion.fbx" id="2_rutv7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_absod"]
+
+[node name="AdventurerNpc" type="CharacterBody3D" groups=["npc"]]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_absod")
+
+[node name="ControllerNpc" parent="." instance=ExtResource("2_rutv7")]
+transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, 0, 0, 0)

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5rr88lnwjf81" path="res://assets/maze/walls/WallBanner.tscn" id="2_ft6cd"]
 [ext_resource type="PackedScene" uid="uid://c5dwceuohnkdi" path="res://assets/maze/walls/WallTransparent.tscn" id="5_cvmbd"]
 [ext_resource type="PackedScene" uid="uid://crrro3lc02e1k" path="res://assets/maze/walls/WallGrave.tscn" id="6_1iba3"]
+[ext_resource type="PackedScene" uid="uid://cifc0b3hkuusl" path="res://assets/npcs/AdventurerNPC.tscn" id="6_bb450"]
 [ext_resource type="PackedScene" uid="uid://cxtqg6kndgbgd" path="res://assets/maze/walls/WallCrystalB.tscn" id="6_ft6cd"]
 [ext_resource type="PackedScene" uid="uid://6vbccgu42gn1" path="res://assets/maze/paths/CrystalPathA.tscn" id="8_ebg2g"]
 [ext_resource type="PackedScene" uid="uid://cfrab4gmjmkeb" path="res://assets/maze/paths/CrystalPathB.tscn" id="9_2ofn6"]
@@ -14,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://h330013map1l" path="res://assets/maze/paths/MirrorPath.tscn" id="14_3p2gp"]
 [ext_resource type="PackedScene" uid="uid://dpuh6g6ax3gd4" path="res://assets/maze/paths/ScaffoldPath.tscn" id="15_gsxep"]
 [ext_resource type="PackedScene" uid="uid://bhbivsfcv2mda" path="res://assets/maze/paths/StonePathA.tscn" id="16_v0vrg"]
-[ext_resource type="PackedScene" uid="uid://c3ltfp0i5xvth" path="res://assets/maze/paths/AdventurerPath.tscn" id="17_bb450"]
 [ext_resource type="PackedScene" uid="uid://de5yb7vghprmc" path="res://assets/maze/paths/StonePathB.tscn" id="17_dg70y"]
 [ext_resource type="Texture2D" uid="uid://b2ekqci47bfje" path="res://assets/hdr/NightSkyHDRI004_8K-HDR.exr" id="18_bb450"]
 
@@ -45,8 +45,10 @@ script = ExtResource("1_elqb8")
 base_path_weight = 4.0
 wall_scenes = Array[PackedScene]([ExtResource("2_ft6cd"), ExtResource("6_1iba3"), ExtResource("5_cvmbd"), ExtResource("6_ft6cd")])
 wall_weights = Array[float]([3.0, 3.0, 3.0, 1.0])
-path_scenes = Array[PackedScene]([ExtResource("8_ebg2g"), ExtResource("9_2ofn6"), ExtResource("10_xa025"), ExtResource("11_36rkl"), ExtResource("12_fs0b5"), ExtResource("13_ma7h6"), ExtResource("15_gsxep"), ExtResource("16_v0vrg"), ExtResource("17_dg70y"), ExtResource("14_3p2gp"), ExtResource("17_bb450")])
-path_weights = Array[float]([2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 4.0, 0.5, 0.25])
+npc_scenes = Array[PackedScene]([ExtResource("6_bb450")])
+npc_weights = Array[float]([1.0])
+path_scenes = Array[PackedScene]([ExtResource("8_ebg2g"), ExtResource("9_2ofn6"), ExtResource("10_xa025"), ExtResource("11_36rkl"), ExtResource("12_fs0b5"), ExtResource("13_ma7h6"), ExtResource("15_gsxep"), ExtResource("16_v0vrg"), ExtResource("17_dg70y"), ExtResource("14_3p2gp")])
+path_weights = Array[float]([2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 4.0, 0.5])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1nqs0")

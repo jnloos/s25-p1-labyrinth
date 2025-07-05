@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccmbjphh67t6m"]
+
+[ext_resource type="PackedScene" uid="uid://f4pok7yknhrh" path="res://assets/halloween/Shrine/shrine_candles.fbx" id="2_oyq5r"]
+[ext_resource type="PackedScene" uid="uid://ccs6fyx0oja5x" path="res://assets/npcs/SkeletonNPC.tscn" id="3_70bdh"]
+[ext_resource type="PackedScene" uid="uid://dom0b7eqqs68b" path="res://assets/mini-dungeon/GraveFloor.tscn" id="3_wuoes"]
+[ext_resource type="Script" uid="uid://16l66htw7jgk" path="res://scripts/npcs/SekeletonNPC.gd" id="4_70bdh"]
+
+[node name="Path" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("3_wuoes")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 2.43427, -2.54)
+light_color = Color(0.0862745, 0.890196, 0.407843, 1)
+shadow_enabled = true
+
+[node name="shrine_candles" parent="." instance=ExtResource("2_oyq5r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -2.4)
+
+[node name="AdventurerNpc" parent="." instance=ExtResource("3_70bdh")]
+transform = Transform3D(-1.6, 0, -2.41593e-07, 0, 1.6, 0, 2.41593e-07, 0, -1.6, 1.51665, -1.39147, -0.610999)
+script = ExtResource("4_70bdh")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)

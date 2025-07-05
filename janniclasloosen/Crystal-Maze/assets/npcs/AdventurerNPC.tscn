@@ -1,25 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cifc0b3hkuusl"]
+[gd_scene load_steps=4 format=3 uid="uid://cifc0b3hkuusl"]
 
-[ext_resource type="PackedScene" uid="uid://db3kvh1flbvq4" path="res://assets/misc/Adventurer.fbx" id="1_xqqqn"]
-[ext_resource type="Script" uid="uid://c7entf6i1mrqt" path="res://scripts/npcs/AdventurerBehaviour.gd" id="2_nlmhc"]
+[ext_resource type="Script" uid="uid://c7entf6i1mrqt" path="res://scripts/npcs/AdventurerNPC.gd" id="2_nlmhc"]
+[ext_resource type="PackedScene" uid="uid://uwe8motttv2n" path="res://assets/adventurers/Characters/fbx/Mage.tscn" id="2_xqqqn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_absod"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xqqqn"]
-
-[node name="AdventurerNpc" type="Node3D"]
+[node name="AdventurerNpc" type="CharacterBody3D" groups=["npc"]]
 script = ExtResource("2_nlmhc")
 
-[node name="Adventurer" parent="." instance=ExtResource("1_xqqqn")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_absod")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1, 0)
-shape = SubResource("BoxShape3D_xqqqn")
+[node name="ControllerNpc" parent="." instance=ExtResource("2_xqqqn")]
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, 0, 0, 0)

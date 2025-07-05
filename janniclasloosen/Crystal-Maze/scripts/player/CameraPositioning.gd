@@ -32,6 +32,14 @@ var current_distance: float
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	current_distance = offset.z
+	
+func _input(event: InputEvent) -> void:
+	if PauseManager.is_paused():
+		return
+
+	if event is InputEventMouseMotion:
+		yaw   -= event.relative.x * sensitivity
+		pitch = clamp(pitch + event.relative.y * sensitivity, min_pitch, max_pitch)
 
 func _process(delta: float) -> void:
 	if not player:
@@ -81,6 +89,10 @@ func _process(delta: float) -> void:
 	global_transform = Transform3D(new_basis, new_pos)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		yaw   -= event.relative.x * sensitivity
+		pitch = clamp(pitch + event.relative.y * sensitivity, min_pitch, max_pitch)
+
 	if PauseManager.is_paused():
 		return
 

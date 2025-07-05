@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bni2krsap1h1c"]
+
+[ext_resource type="Script" uid="uid://dd4clovwwilew" path="res://scripts/debug.gd" id="1_bt4xx"]
+[ext_resource type="PackedScene" uid="uid://c3ltfp0i5xvth" path="res://assets/maze/npcs/AdventurerPath.tscn" id="1_rncb5"]
+[ext_resource type="Texture2D" uid="uid://b2ekqci47bfje" path="res://assets/hdr/NightSkyHDRI004_8K-HDR.exr" id="3_yg8xn"]
+[ext_resource type="PackedScene" uid="uid://bnwhh32vo3hhw" path="res://player/PlayerController.tscn" id="4_bt4xx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vvb8i"]
+panorama = ExtResource("3_yg8xn")
+
+[sub_resource type="Sky" id="Sky_i7hgn"]
+sky_material = SubResource("PanoramaSkyMaterial_vvb8i")
+
+[sub_resource type="Environment" id="Environment_vcurg"]
+background_mode = 2
+background_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_i7hgn")
+ssr_enabled = true
+glow_enabled = true
+
+[node name="Environment" type="Node3D"]
+script = ExtResource("1_bt4xx")
+
+[node name="Path" parent="." instance=ExtResource("1_rncb5")]
+
+[node name="PlayerController" parent="." instance=ExtResource("4_bt4xx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vcurg")

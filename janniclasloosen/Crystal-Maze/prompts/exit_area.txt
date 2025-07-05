@@ -1,0 +1,5 @@
+Der Spieler hat den Bereich von NPC {{name}} (NPC ID: {{id}}) verlassen.
+
+Du sollst mit diesem NPC nun abschließend reagieren.
+Nutze passende Aktionen und Animationen, um den Übergang natürlich wirken zu lassen.
+Du kannst z. B. eine Verabschiedung äußern oder wieder zur vorherigen Aktivität übergehen.

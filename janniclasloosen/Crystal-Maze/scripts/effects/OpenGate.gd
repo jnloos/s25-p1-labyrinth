@@ -15,13 +15,13 @@ func _ready() -> void:
 	area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("npc"):
 		players_inside += 1
 		if players_inside == 1:
 			_scale_gate(OPEN_SCALE_Y)
 
 func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("npc"):
 		players_inside = max(players_inside - 1, 0)
 		if players_inside == 0:
 			_scale_gate(CLOSE_SCALE_Y)

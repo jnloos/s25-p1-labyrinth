@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnwhh32vo3hhw"]
+[gd_scene load_steps=7 format=3 uid="uid://bnwhh32vo3hhw"]
 
 [ext_resource type="Script" uid="uid://ckbxp10eeysq5" path="res://scripts/player/AttachCamera.gd" id="1_gmr85"]
 [ext_resource type="PackedScene" uid="uid://d0fw60ix2q5bx" path="res://player/CameraRig.tscn" id="1_gypi1"]
 [ext_resource type="PackedScene" uid="uid://3re8h8wflilo" path="res://player/PlayerBody.tscn" id="2_gmr85"]
 [ext_resource type="PackedScene" uid="uid://bs6of4mxdmga8" path="res://player/PauseOverlay.tscn" id="4_bct12"]
+[ext_resource type="PackedScene" uid="uid://c504l0ytq0xmh" path="res://player/ChatDisplay.tscn" id="5_hgpjj"]
+[ext_resource type="PackedScene" uid="uid://bw8sl2bcpi36o" path="res://player/Compass.tscn" id="6_pjnof"]
 
 [node name="PlayerController" type="Node3D"]
 script = ExtResource("1_gmr85")
@@ -14,4 +16,8 @@ max_distance = 200.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_gmr85")]
 
+[node name="ChatDisplay" parent="." instance=ExtResource("5_hgpjj")]
+
 [node name="PauseOverlay" parent="." instance=ExtResource("4_bct12")]
+
+[node name="Compass" parent="." instance=ExtResource("6_pjnof")]

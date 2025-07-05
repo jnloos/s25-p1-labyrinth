@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://uwe8motttv2n"]
+
+[ext_resource type="PackedScene" uid="uid://dfe711gr6nwg1" path="res://assets/adventurers/Characters/fbx/Mage.fbx" id="1_00hs8"]
+
+[node name="Mage" instance=ExtResource("1_00hs8")]
+
+[node name="Mage_Cape" parent="Rig/Skeleton3D" index="0"]
+transform = Transform3D(1, 2.52435e-28, 0, 2.01948e-28, 1, 3.55271e-15, 0, 3.55271e-15, 1, 1.4155e-28, 1.21587, -1.5548e-07)
+bone_idx = 4
+
+[node name="Spellbook" parent="Rig/Skeleton3D" index="1"]
+transform = Transform3D(-1, 1.11018e-08, 1.87303e-06, 1.91507e-06, -1.85853e-07, 1, 6.32554e-08, 1, 1.46542e-07, 0.883132, 1.04926, 0.265739)
+visible = false
+bone_idx = 10
+
+[node name="Spellbook_open" parent="Rig/Skeleton3D" index="2"]
+transform = Transform3D(-1, 1.11018e-08, 1.87303e-06, 1.91507e-06, -1.85853e-07, 1, 6.32554e-08, 1, 1.46542e-07, 0.883132, 1.04926, 0.145387)
+visible = false
+bone_idx = 11
+
+[node name="1H_Wand" parent="Rig/Skeleton3D" index="3"]
+transform = Transform3D(-1, 5.80976e-07, -6.51137e-07, -7.40297e-07, -4.34354e-07, 1, 4.9902e-07, 1, 4.16604e-07, -0.883133, 1.04926, -3.6886e-07)
+bone_idx = 17
+
+[node name="2H_Staff" parent="Rig/Skeleton3D" index="4"]
+transform = Transform3D(-1, 5.80976e-07, -6.51137e-07, -7.40297e-07, -4.34354e-07, 1, 4.9902e-07, 1, 4.16604e-07, -0.883133, 1.04926, -3.6886e-07)
+bone_idx = 18
+
+[node name="Mage_Hat" parent="Rig/Skeleton3D" index="5"]
+transform = Transform3D(1, 2.52435e-28, 0, 2.01948e-28, 1, 1.06581e-14, 0, -3.55271e-15, 1, 2.85089e-28, 1.7841, -1.80318e-07)
+bone_idx = 20

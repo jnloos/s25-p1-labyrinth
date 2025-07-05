@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dom0b7eqqs68b"]
+
+[ext_resource type="PackedScene" uid="uid://covppalmcui4n" path="res://assets/mini-dungeon/FBX format/floor-detail.fbx" id="1_fquj5"]
+[ext_resource type="PackedScene" uid="uid://b273cxkfpu4je" path="res://assets/halloween/Grave/floor_dirt_grave.fbx" id="2_aytnn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aytnn"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="floor-detail4" parent="." instance=ExtResource("1_fquj5")]
+transform = Transform3D(-1.31134e-07, 0, -4.5, 0, 1, 0, 3, 0, -1.96701e-07, -2.25, 0, 3)
+
+[node name="floor-detail3" parent="." instance=ExtResource("1_fquj5")]
+transform = Transform3D(4.5, 0, 0, 0, 1, 0, 0, 0, 2, 2.25, 0, -3.5)
+
+[node name="floor_dirt_grave" parent="." instance=ExtResource("2_aytnn")]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.75, 2.25, 0.125, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor_dirt_grave"]
+transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 3.5, 0, -0.758919, 0)
+shape = SubResource("BoxShape3D_aytnn")
+
+[node name="floor-detail5" parent="." instance=ExtResource("1_fquj5")]
+transform = Transform3D(-1.31134e-07, 0, -4.5, 0, 1, 0, 3, 0, -1.96701e-07, -2.25, 0, 0)
+
+[node name="floor-detail6" parent="." instance=ExtResource("1_fquj5")]
+transform = Transform3D(-1.31134e-07, 0, -4.5, 0, 1, 0, 3, 0, -1.96701e-07, -2.25, 0, -3)
